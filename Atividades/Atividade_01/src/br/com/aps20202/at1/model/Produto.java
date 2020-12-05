@@ -39,6 +39,14 @@ public class Produto {
 		this.margem = margem;
 	}
 
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -71,11 +79,33 @@ public class Produto {
 		this.custo = custo;
 	}
 
+	public int getQtdEstoque() {
+		return qtdEstoque;
+	}
+
+	public void setQtdEstoque(int qtdEstoque) {
+		this.qtdEstoque = qtdEstoque;
+	}
+
 	public void compra(int quant) {
 		this.qtdEstoque += quant;
 	}
 
 	public void venda(int quant) {
-		this.qtdEstoque -= quant;
+		if (quant <= this.qtdEstoque)
+			this.qtdEstoque -= quant;
+		else
+			System.out.println("Error, estoque insuficiente.");
 	}
+
+	public double calculaPrecoVenda() {
+		return valorCompra + custo + margem * (valorCompra + custo);
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [codigo=" + codigo + ", qtdEstoque=" + qtdEstoque + ", descricao=" + descricao
+				+ ", valorCompra=" + valorCompra + ", custo=" + custo + ", margem=" + margem + "]";
+	}
+
 }
