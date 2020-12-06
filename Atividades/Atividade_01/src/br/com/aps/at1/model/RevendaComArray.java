@@ -89,6 +89,18 @@ public class RevendaComArray {
 		}
 	}
 
+	public void listaProdutos() {
+		try {
+			for (int i = 0; i < produtos.length; i++) {
+				Produto produto = produtos[i];
+				if (produto != null)
+					System.out.println(produto);
+			}
+		} catch (Exception e) {
+			System.out.println("Error, produtos inexistentes.");
+		}
+	}
+
 	public int listar(int codigo) {
 		Produto produto = null;
 		try {

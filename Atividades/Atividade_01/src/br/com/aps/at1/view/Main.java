@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 import br.com.aps.at1.model.Produto;
 import br.com.aps.at1.model.RevendaComArray;
+
 // João Victor Aquino Correia - 470914.
-public class teste {
+public class Main {
 
 	private static Scanner tc;
 
@@ -22,7 +23,7 @@ public class teste {
 				System.out.println("***************************************\n" + "Digite 0 para finalizar o programa.\n"
 						+ "Digite 1 para inserir.\n" + "Digite 2 para alterar.\n"
 						+ "Digite 3 para consultar os preços.\n" + "Digite 4 para Listar os preços.\n"
-						+ "Digite 5 para comprar.\n" + "Digite 6 para vender.\n"
+						+ "Digite 5 para comprar.\n" + "Digite 6 para vender.\n" + "Digite 7 para imprimir os produtos.\n"
 						+ "***************************************\n");
 				int key = tam = tc.nextInt();
 				switch (key) {
@@ -131,6 +132,10 @@ public class teste {
 					System.out.print("Digite a quantidade do produto: ");
 					quantidade = tc.nextInt();
 					revenda.vender(codigo, quantidade);
+					break;
+					
+				case 7:
+					revenda.listaProdutos();
 					break;
 
 				default:
