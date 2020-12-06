@@ -1,4 +1,4 @@
-package br.com.aps20202.at1.model;
+package br.com.aps.at1.model;
 
 public class Produto {
 	// Declaração de variaveis.
